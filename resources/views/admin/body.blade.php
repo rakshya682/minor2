@@ -1,4 +1,7 @@
+<div class="main-pannel">
+        <div class="content-wrapper">
 <div class="row">
+  
               <div class="col-sm-4 grid-margin">
                 <div class="card">
                   <div class="card-body">
@@ -94,7 +97,8 @@
                   </div>
              
            
-           
+</div>
+</div>
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
           <footer class="footer">

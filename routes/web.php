@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,8 @@ Route::get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('/redirect', [HomeController::class, 'redirect']);
+Route::get('/view_event', [AdminController::class, 'view_event']);
+Route::post('/add_event', [AdminController::class, 'add_event']);
+Route::get('/delete_event/{id}',[AdminController::class, 'delete_event']);
+Route::get('/view_addEvent',[AdminController::class, 'view_addEvent']);
+Route::post('/event_add', [AdminController::class, 'event_add']);
