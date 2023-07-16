@@ -60,6 +60,15 @@
               <span class="menu-title">Events</span>
             </a>
           </li>
+          
+              <li class="nav-item menu-items">
+            <a class="nav-link" href="{{url('/show_events')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-playlist-play"></i>
+              </span>
+              <span class="menu-title">Show Events</span>
+            </a>
+          </li>
           <li class="nav-item menu-items">
             <a class="nav-link" href="pages/icons/mdi.html">
               <span class="menu-icon">

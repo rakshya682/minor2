@@ -48,7 +48,8 @@ label{
 
                     <div class="div_design">
                 <label>Description</label>
-                <input class="text_color" type="text" name="description" placeholder="Write a description" required="">
+                <textarea class="text_color" type="text" name="description" placeholder="Write a description" required="" rows="4" cols="50">
+</textarea>
                     </div>
 
                     <!-- <div class="div_design">

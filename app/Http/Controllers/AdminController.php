@@ -58,4 +58,17 @@ class AdminController extends Controller
        return redirect()->back();
 
     }
+    public function show_events()
+    {
+        $event=addEvent::all();
+        return view('admin.show_events',compact('event'));
+    }
+    public function delete_events($id)
+    {
+            $event=addEvent::find($id);
+
+            $event->delete();
+            return redirect()->back();
+
+    }
 }
