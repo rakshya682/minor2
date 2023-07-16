@@ -29,3 +29,5 @@ Route::get('/view_addEvent',[AdminController::class, 'view_addEvent']);
 Route::post('/event_add', [AdminController::class, 'event_add']);
 Route::get('/show_events',[AdminController::class, 'show_events']);
 Route::get('/delete_events/{id}',[AdminController::class, 'delete_events']);
+Route::get('/update_events/{id}',[AdminController::class, 'update_events']);
+Route::post('/update_events_confirm/{id}',[AdminController::class, 'update_events_confirm']);

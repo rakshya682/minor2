@@ -68,7 +68,43 @@ class AdminController extends Controller
             $event=addEvent::find($id);
 
             $event->delete();
-            return redirect()->back();
+            return redirect()->back()->with('message','Evnets Deleted Successfully');
+
+    }
+    public function update_events($id)
+    {
+        $event=addEvent::find($id);
+
+        return view('admin.update_events',compact('event'));
+    }
+    public function update_events_confirm(Request $request,$id)
+    {
+        $event=addEvent::find($id);
+
+        $event->event_name=$request->event_name;
+
+        $event->description=$request->description;
+
+        $event->price=$request->price;
+
+        $image=$request->image;
+
+        if($image)
+        {
+            $imagename=time().'.'.$image->getClientOriginalExtension();
+
+        $request->image->move('addEvent',$imagename);
+
+        $event->image=$imagename;
+
+
+        }
+        
+        $event->save();
+
+        return redirect()->back()->with('message','Event Updated Successfully');
+
+
 
     }
 }

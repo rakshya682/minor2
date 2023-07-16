@@ -42,6 +42,15 @@
       @include('admin.navbar')
         <!-- partial -->
         <div class="content-wrapper"style="padding-top:100px">
+        @if(session()->has('message'))
+
+        <div class=" alert alert success">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button">
+                {{session()->get('message')}}
+            </div>
+
+
+        @endif
 
         <h2 class="font_size">All Events</h2>
         <table class="center">
@@ -72,7 +81,7 @@
 
 
                      <td>
-                     <a class="btn btn-success" href="">Edit</a>
+                     <a class="btn btn-success" href="{{url('update_events',$event->id)}}">Edit</a>
 
                      </td>
                 </tr>
