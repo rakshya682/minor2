@@ -48,7 +48,20 @@
 
                         <h6>Event Details : {{$event->description}}</h6>
                         <h6>Available Tickets : {{$event->quantity}}</h6>
-                        <a href="" class="btn btn-primary">Get Tickets</a>
+                        <form action="{{url('get_tickets',$event->id)}}" method="post">
+                              @csrf
+                              <div class="row">
+                                 <div class="col-md-4">
+                                 <input type="number" name="quantity" value="1" min="1" style="width:100px;">
+                                 </div>
+
+                                 <div class="col-md-4">
+                                 <input type="submit"value="Get tickets">
+                              </div>
+                           
+                        </div>
+                        </form>
+
                        
                      </div>
                   </div>

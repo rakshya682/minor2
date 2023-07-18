@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\addEvent;
 
+use App\Models\ticket;
+
+
 class HomeController extends Controller
 {
     public function index(){
@@ -34,10 +37,31 @@ class HomeController extends Controller
             $event=addEvent::find($id);
             return view('home.event_details',compact('event'));
         }
-        public function get_tickets($id)
+        public function get_tickets( Request $request, $id)
         {
             if(Auth::id())
             {
+                $user=Auth::user();
+
+                $event=addEvent::find($id);
+
+               
+
+                $ticket=new ticket;
+                $ticket->name=$user->name;
+                $ticket->email=$user->email;
+                $ticket->phone=$user->phone;
+                $ticket->user_id=$user->id;
+
+
+                $ticket->event_name=$event->event_name;
+                $ticket->price=$event->price;
+                $ticket->image=$event->image;
+                $ticket->event_id=$event->id;
+                $ticket->quantity=$request->quantity;
+
+                $ticket->save();
+                
                 return redirect()->back();
             }
             else{
