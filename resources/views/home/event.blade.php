@@ -12,12 +12,24 @@
                   <div class="box">
                      <div class="option_container">
                         <div class="options">
-                           <a href="" class="option1">
-                           Add   To Cart
+                           <a href="{{url('event_details',$events->id)}}" class="option1">
+                           Event Details
                            </a>
-                           <a href="" class="option2">
-                           Get Tickets
-                           </a>
+               
+                           <form action="{{url('get_tickets',$events->id)}}" method="post">
+                              @csrf
+                              <div class="row">
+                                 <div class="col-md-4">
+                                 <input type="number" name="quantity" value="1" min="1" style="width:100px;">
+                                 </div>
+
+                                 <div class="col-md-4">
+                                 <input type="submit"value="Get tickets">
+                              </div>
+                           
+                        </div>
+                        </form>
+
                         </div>
                      </div>
                      <div class="img-box">
@@ -27,7 +39,7 @@
                         <h5>
                         {{$events->event_name}}
                         </h5>
-                        <h6>
+                        <h6 style="color:blue">
                            Price<br>
                         Rs.{{$events->price}}
 
@@ -40,6 +52,6 @@
                   @endforeach   
                   <span style="padding-top:20px;">
             {!!$event->withQueryString()->links('pagination::bootstrap-5')!!}
-</span>
+               </span> 
          </div>
       </section>

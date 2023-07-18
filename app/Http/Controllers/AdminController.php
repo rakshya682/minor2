@@ -45,6 +45,8 @@ class AdminController extends Controller
 
         $addEvent->price=$request->price;
 
+        $addEvent->quantity=$request->quantity;
+
          $image=$request->image;
 
          $imagename=time().'.'.$image->getClientOriginalExtension();
@@ -86,6 +88,8 @@ class AdminController extends Controller
         $event->description=$request->description;
 
         $event->price=$request->price;
+
+        $event->quantity=$request->quantity;
 
         $image=$request->image;
 

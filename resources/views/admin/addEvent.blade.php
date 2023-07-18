@@ -68,6 +68,11 @@ label{
                 <input class="text_color" type="number" name="price" placeholder="Write a price" required="">
                     </div>  
                     
+                    <div class="div_design">
+                <label>Quantity</label>
+                <input class="text_color" type="number" min="0" name="quantity" placeholder="Write the quantity" required="">
+                    </div> 
+
                      <div class="div_design">
                 <label>Event Image Here :</label>
                 <input  type="file" name="image" required="">

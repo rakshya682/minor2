@@ -29,5 +29,20 @@ class HomeController extends Controller
             return view('home.userpage',compact('event'));
         }
         }
+        public function event_details($id)
+        {
+            $event=addEvent::find($id);
+            return view('home.event_details',compact('event'));
+        }
+        public function get_tickets($id)
+        {
+            if(Auth::id())
+            {
+                return redirect()->back();
+            }
+            else{
+                return redirect('login');
+            }
+        }
     }
 

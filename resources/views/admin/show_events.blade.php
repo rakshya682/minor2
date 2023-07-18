@@ -59,6 +59,7 @@
                 <th class="th_deg">Description</th>
                 <th clas="th_deg">Image</th>
                 <th class="th_deg">Price</th>
+                <th class="th_deg">Quantity</th>
                 <th class="th_deg">Delete</th>
                 <th class="th_deg">Edit</th>
             </tr>
@@ -73,7 +74,7 @@
                     
 
                     <td>{{$event->price}}</td>
-
+                    <td>{{$event->quantity}}</td>
                     <td>
                         <a class="btn btn-danger" onclick="return confirm('Are You Sure to Delete this?')" href="{{url('delete_events',$event->id)}}">Delete</a>
 

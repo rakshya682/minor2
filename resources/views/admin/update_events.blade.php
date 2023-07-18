@@ -76,6 +76,11 @@ label{
                 <label>Event Price</label>
                 <input class="text_color" type="number" name="price" placeholder="Write a price" required="" value="{{$event->price}}">>
                     </div>  
+
+                    <div class="div_design">
+                <label>Quantity</label>
+                <input class="text_color" type="number" name="quantity" placeholder="Write a quantity" required="" value="{{$event->quantity}}">>
+                    </div>  
                     <div class="div_design">
                 <label>Current Event Image Here :</label>
                 <img style="margin:auto;"  height="100" width="100" src="/addEvent/{{$event->image}}"
