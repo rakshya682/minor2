@@ -14,7 +14,8 @@ use App\Models\ticket;
 class HomeController extends Controller
 {
     public function index(){
-        $event=addEvent::paginate(10);
+        $event=addEvent::where('status',1)->paginate(6);
+        // $event=addEvent::paginate(10);
         return view('home.userpage',compact('event'));
     }
     public function redirect()

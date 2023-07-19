@@ -20,7 +20,7 @@ return new class extends Migration
              $table->string('image')->nullable();
              $table->string('quantity')->nullable();
              $table->string('price')->nullable();
-          
+             $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }

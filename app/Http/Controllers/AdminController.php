@@ -39,6 +39,9 @@ class AdminController extends Controller
     {
         $addEvent=new addEvent;
 
+        // dd($request->all());
+
+
          $addEvent->event_name=$request->event_name;
 
         $addEvent->description=$request->description;
@@ -47,13 +50,19 @@ class AdminController extends Controller
 
         $addEvent->quantity=$request->quantity;
 
-         $image=$request->image;
+         
+            $image=$request->image;
 
-         $imagename=time().'.'.$image->getClientOriginalExtension();
+            if($image)
+        {
+            $imagename=time().'.'.$image->getClientOriginalExtension();
 
-         $request->image->move('addEvent',$imagename);
+        $request->image->move('addEvent',$imagename);
 
-         $addEvent->image=$image;
+        $addEvent->image=$imagename;
+
+
+        }
 
          $addEvent->save();
 
@@ -90,7 +99,8 @@ class AdminController extends Controller
         $event->price=$request->price;
 
         $event->quantity=$request->quantity;
-
+        $event->status=$request->status;
+        
         $image=$request->image;
 
         if($image)
@@ -104,11 +114,13 @@ class AdminController extends Controller
 
         }
         
-        $event->save();
+        $event->update();
 
         return redirect()->back()->with('message','Event Updated Successfully');
 
 
 
     }
+
+
 }

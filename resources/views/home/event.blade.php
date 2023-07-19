@@ -39,7 +39,7 @@
                         <h5>
                         {{$events->event_name}}
                         </h5>
-                        <h6 style="color:blue">
+                        <h6>
                            Price<br>
                         Rs.{{$events->price}}
 

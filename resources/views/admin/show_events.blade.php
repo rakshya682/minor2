@@ -47,7 +47,7 @@
         <div class=" alert alert success">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button">
                 {{session()->get('message')}}
-            </div>
+        </div>
 
 
         @endif
@@ -62,6 +62,7 @@
                 <th class="th_deg">Quantity</th>
                 <th class="th_deg">Delete</th>
                 <th class="th_deg">Edit</th>
+                <th class="th_deg">Status</th>
             </tr>
 
             @foreach($event as $event)
@@ -85,7 +86,10 @@
                      <a class="btn btn-success" href="{{url('update_events',$event->id)}}">Edit</a>
 
                      </td>
-                </tr>
+                     <td>
+                      <span class"badge">{{ $event->status == '0' ? 'Inactive' : 'Active'}}</span>
+                    </td>
+                     </tr>
                 @endforeach
         </table>
     

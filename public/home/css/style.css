@@ -143,6 +143,7 @@ a:focus {
   font-weight: bold;
   font-size: 32px;
   color: #000000;
+  max-width: 200%;
 }
 
 .custom_nav-container {
