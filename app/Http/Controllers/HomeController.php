@@ -69,5 +69,10 @@ class HomeController extends Controller
                 return redirect('login');
             }
         }
+        public function show_tickets()
+        {
+            return view('home.showtickets');
+
+        }
     }
 
